@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body></body>
+<script> 
+    const monthNames = ["January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"
+    ];
+    const DayNames = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday",
+            "saturday"];
+    const date = new Date();
+    const today = DayNames[date.getDay()] ;
+    const month = monthNames[date.getMonth()] ;
+    const  year = date.getUTCFullYear();
+    const date2 = date.getUTCDate();
+    
+    
+    console.log (`Today is ${today} the ${date2} of ${month} ${year}`)
+</script>
+</html>
