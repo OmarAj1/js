@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+        function getGrade(score) {
+                switch (true) {
+                    case score >= 90:
+                        return "A";
+                        break;
+                    case score >= 80:
+                        return "B";
+                        break;
+                    case score >= 70:
+                        return "C";
+                        break;
+                    case score >= 65:
+                        return "D";
+                        break;
+                    default:
+                        return "F";
+                }
+            }
+            console.log(getGrade(100));
+</script>
+</html>
