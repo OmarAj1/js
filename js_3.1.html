@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js_3.1</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /*
+    JavaScript - Declaring Functions
+    The following exercise contains the following
+    subjects:
+    * functions
+    Instructions
+    * Please reformat the following function
+    declarations to function expression.
+    * Please reformat the following function
+    expressions to function declarations.
+    Submit the file to Hive
+    */
+// From function declarations to function expressions
+
+function welcome() {
+let welcome = 'Welcome to Appleseeds Bootcamp!';
+return welcome;
+}
+function power(a) {
+let myNumber = a;
+let result = Math.pow(myNumber, 2);
+return result;
+}
+function add(a, b = 5) {
+let myNumber = a;
+let sum = myNumber + b;
+return sum;
+}
+// From function expressions to function declarations
+const hello = () => "Hello!";
+const squareRoot = a => Math.sqrt(a);
+const randomNumbers = (a, b) => Math.random() * (a - b) +b
+</script>
+</html>
