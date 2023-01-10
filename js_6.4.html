@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+
+    //spain/isreal / egypt / china
+    const wpop = 7900;
+    const populations = [500, 300, 600, 1200];
+    function populationPercentages(populations) {
+        const percentages = [];
+        function percentageOfWorld1(a, wpop) {
+            const res = (a / wpop) * 100;
+            return res
+        }
+        for (let i = 1; i < populations.length; i++) {
+            const a = populations[i];
+            const ress = percentageOfWorld1(a, wpop); console.log(ress);
+        }
+    }
+    populationPercentages(populations)
+</script>
+
+</html>
