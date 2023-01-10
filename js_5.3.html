@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function validation1 (pass) {
+        if (pass>7) {
+            return "Strong";
+        }
+        else {return "Weak"}
+
+        }
+
+        const validation2 = pass > 7 ? "Strong" : "Weak";
+
+        function validation3 (pass) {
+        if (pass.length > 7 && pass != pass.toLowerCase()) {
+                return "Very Strong";
+            }
+                else { return "Weak" }
+
+        }
+
+
+    console.log(`${validation1(6)}`);
+    console.log(`${validation2(8)}`);
+    console.log(`${validation3("jasdlkasjdlkD")}`);
+
+
+
+
+</script>
+</html>
