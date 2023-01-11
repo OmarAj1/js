@@ -1,74 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>js_3.1</title>
 </head>
+
 <body>
-    
+
 </body>
 <script>
     /*
-    JavaScript - Declaring Functions
-    The following exercise contains the following
-    subjects:
-    * functions
-    Instructions
-    * Please reformat the following function
-    declarations to function expression.
-    * Please reformat the following function
-    expressions to function declarations.
-    Submit the file to Hive
-    */
-// From function declarations to function expressions
-//welcome 
-function welcome() {
-let welcome = 'Welcome to Appleseeds Bootcamp!';
-return welcome;
-}
-const welcome =()=> "Welcome to Appleseeds Bootcamp!";
-// power
-function power(a) {
-let myNumber = a;
-let result = Math.pow(myNumber, 2);
-return result;
-}
-const power = (a) => Math.pow(a, 2); // 
-// add 
-
-function add(a, b = 5) {
-let myNumber = a;
-let sum = myNumber + b;
-return sum;
-}
-const add = (a, b = 5) => a + b;
-
-// From function expressions to function declarations
-
-const hello = () => "Hello!";
-
-function hello () {
-    let welcome = 'hello';
-    return welcome;
-}
-const squareRoot = a => Math.sqrt(a);
-
-function squareRoot (a) 
-{
-    let myNumber = a;
-    let result = Math.sqrt (myNumber);
-    return result;
-}
-
-        const randomNumbers = (a, b) => 
-
-    function randomNumbers (a,b)
-    {
-        res = Math.random() * (a - b) + b;
-        return res;
+        JavaScript - Declaring Functions
+        The following exercise contains the following
+        subjects:
+        * functions
+        Instructions
+        * Please reformat the following function
+        declarations to function expression.
+        * Please reformat the following function
+        expressions to function declarations.
+        Submit the file to Hive
+        */
+    // From function declarations to function expressions
+    //welcome 
+    function welcome() {
+        let welcome = 'Welcome to Appleseeds Bootcamp!';
+        return welcome;
     }
-    
-    </script>
+    const welcome = () => "Welcome to Appleseeds Bootcamp!";
+    // power
+    function power(a) {
+        let myNumber = a;
+        let result = Math.pow(myNumber, 2);
+        return result;
+    }
+    const power = (a) => Math.pow(a, 2); // 
+    // add 
+
+    function add(a, b = 5) {
+        let myNumber = a;
+        let sum = myNumber + b;
+        return sum;
+    }
+    const add = (a, b = 5) => a + b;
+
+    // From function expressions to function declarations
+
+    const hello = () => "Hello!";
+
+    function hello() {
+        let welcome = 'hello';
+        return welcome;
+    }
+    const squareRoot = a => Math.sqrt(a);
+
+    function squareRoot(a) {
+        let myNumber = a;
+        let result = Math.sqrt(myNumber);
+        return result;
+    }
+
+    const randomNumbers = (a, b) =>
+
+        function randomNumbers(a, b) {
+            res = Math.random() * (a - b) + b;
+            return res;
+        }
+</script>
+
 </html>
