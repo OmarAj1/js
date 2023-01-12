@@ -12,17 +12,12 @@
 
 </body>
 <script>
-    function object_iteration(obj) {
-        obj = {
-            a: 1,
-            b: 2,
-            c: 3
-        }
-        obj2 = {...obj
-        };
-        console.log(obj2);;
-    }
-    object_iteration();
+    var arr = ['Apple', 'Apple', 'Banana', 'Mango', 'Strawberry', 'Banana'];
+    var afterArr = arr.filter(function(element, index) {
+        if (arr.indexOf(element) == index)
+            return element;
+    });
+    console.log('After filtering Array: ' + afterArr);
 </script>
 
 </html>
