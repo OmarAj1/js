@@ -31,19 +31,76 @@
     funcA()
 
     //  block 2:
+    //  let fullName = 'Colin Ihrig'; makes it undefined because var is a global statement 
+    //  and let and const is "local" so it can't be penetrated from method that is not in 
+    //  the same boat or out of it's scope.
+
+    //  it prints "Aurelio De Rosa" it takes the most recent value
+    //  and because "this" takes only what insides its father's object 
+    //  so if we take "fullName: 'Aurelio De Rosa'" out of the prop object scope
+    //  it will prints undefined because it knows there is a value called fullname from 
+    //  outside the object but has no value.
+
     var fullName = 'John Doe';
     var obj = {
+        fullName: 'Colin Ihrig',
         prop: {
-            fullName: 'Colin Ihrig',
             fullName: 'Aurelio De Rosa',
             getFullName: function() {
                 return this.fullName;
             }
         }
-    }
+    };
+    console.log(obj.prop.getFullName());
     var test = obj.prop.getFullName;
     console.log(test());
-    console.log(obj.prop.getFullName());
+
+
+    // block 3: 
+    // defining "a = b = 0" DO mean that first of all define b = 0 and then give a 
+    // the value that b has it. that means a has local and b has a global value 
+    // so a will not be seen out of funcB() scope 
+    function funcB() {
+        let a = b = 0;
+        a++;
+        return a;
+    }
+    funcB();
+    console.log(typeof a);
+    console.log(typeof b);
+
+    // black 4: 
+    // in js the console will process the most recent value so the first funcC(); takes the most recent 
+    // declaration which prints 2 then will come the second call which will do the same thing
+    // therefore the code will be read like this. the code cant be fixed when the functions 
+    // has the same names however u can change its names or remove the whole second func
+    // and cut the log to the first one. and execute the code once
+
+
+    function funcC() {
+        console.log("1");
+    }
+
+    function funcC() {
+        console.log("2");
+    }
+    funcC();
+    funcC();
+
+    //block 5: 
+    // 
+
+    function funcD1() {
+        d = 1;
+    }
+    funcD1();
+    console.log(d);
+
+    function funcD2() {
+        var e = 1;
+    }
+    funcD2();
+    console.log(e);
 </script>
 
 </html>
