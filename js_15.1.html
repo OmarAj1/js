@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // function getSum(arr1, arr2) {
+    //     const sum = 0;
+    //     for (let i = 0; i < arr1.length; i++) {
+    //         sum += arr1[i];
+    //     }
+    //     for (let i = 0; i < arr2.length; i++) {
+    //         sum += arr2[i];
+    //     }
+    // }
+    // getSum([1, 2, 3][5, 66, 23])
+    // lines 16/20/24/
+    // the code has a lot of errors not one and way to do it more efficient
+    // 1- line 16 the sum is assigned as constant variable and the sum is is only thing that should be changed :(  
+    // 2- line 20 you cant declare a variable twice in your code you should it once  
+    //    and then or to keep it constant and cant be changed or to assign to it variables. 
+    // 3- line 24 getSum function call downside is not tided the same as where the method declared function(var1,var2)
+    //    but it called as it is a 3d array or array of arrays
+    // 4- extra problems (why to do 2 for loops if both of them have the same length,they didn't log it to the console or even return the sum)
+    // 
+    function getSum(arr1, arr2) {
+        let sum = 0;
+        for (let i = 0; i < arr1.length; i++) {
+            sum += arr1[i];
+        }
+        for (i = 0; i < arr2.length; i++) {
+            sum += arr2[i];
+        }
+        // console.log(sum);
+    }
+    getSum([1, 2, 3], [5, 66, 23])
+</script>
+
+</html>

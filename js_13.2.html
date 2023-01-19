@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    const foods = ["falafel", "sabich", "hummus",
+        "Pizza with extra pineapple"
+    ];
+    //q1
+    console.log(foods.sort((a, b) => (a > b ? 1 : -1)));
+    //q2
+    console.log(foods.sort().reverse())
+
+    // q3
+    console.log(foods.sort((a, b) => (a.charAt[0] > b.charAt[0] ? -1 : 1)));
+    // q4
+    console.log(foods.sort((a, b) => (a.charAt[0] > b.charAt[0] ? 1 : -1)));
+    //q5
+    const words = ["apple",
+        "supercalifragilisticexpialidocious",
+        "hi", "zoo"
+    ];
+    console.log(words.sort((a, b) => (a.length > b.length ? 1 : -1)));
+</script>
+
+</html>

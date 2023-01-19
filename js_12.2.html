@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    candyStore = {
+        candies: [{
+            name: "mint gum",
+            id: "as12f",
+            price: 2,
+            amount: 2
+        }, {
+            name: "twix",
+            id: "5hd7y",
+            price: 5,
+            amount: 4
+        }, ],
+        cashRegister: 200
+    }
+
+    // q1 
+    const getCandy = (obj, id) => {
+        console.log(obj.candies.find(el => el.id === id));
+    }
+
+    getCandy(candyStore, 'as12f');
+
+    // q2
+    const getPrice = (obj, id) => {
+        console.log(obj.candies.find(el => el.price === getCandy).price)
+    }
+    getPrice()
+        //     //q3
+    function addCandy(candyStore, id, name, price) {
+        candyStore.candies.push({
+            "name": name,
+            "id": id,
+            "price": price,
+            "amount": 1
+        })
+    }
+    addCandy(candyStore, "jshy4", "mints", 8)
+    console.log(candyStore);
+    //q4 
+    function buy(candyStore, id) {
+        const candy = candyStore.candies.find(candy => candy.id === id);
+        if (candy) {
+            candyStore.cashRegister += candy.price;
+            candyStore.amount - 1;
+        }
+    }
+</script>
+
+</html>

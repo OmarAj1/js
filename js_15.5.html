@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    //1- basically too much added spaces that takes space in the memory for nothing 
+
+    // 2- line 26. the main problem is where we have counter + 1. here when initializing the code 
+    // it is right that it will add to count one but it will not store it in the value count 
+    // because it is an operation like any another doing it just in place. so if put it in another 
+    // parameter it will work or if logged it out to the console. we can solve that by putting 
+    // counter++ which it equals "counter += 1" so it adds and storing it to our variable counter
+    //  
+    function countOccurrences(str, char) {
+        let counter = 0;
+        for (let i = 0; i < str.length; i++) {
+            if (str.charAt(i) === char) {
+                counter++;
+            }
+        }
+        return counter;
+    }
+    console.log(countOccurrences("ini mini miny moe", "n"));
+</script>
+
+</html>

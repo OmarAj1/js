@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 1- first of all it is recommended to use let not var when defining a new possibly changing variables 
+    // 2- the function called calcAverage and it returns the sum of an array elements
+    //      so to correct that we need to divide on the length of the array
+
+    // 3-   the most important error is the sum is declared but not has no any variable yet
+    //      So the when adding to it or dividing it by another number we will have NAN value  
+    //      because we are doing operations to a not a number value to a true value so it will  
+    //      always be NAN. therefore we can solve that by assign a initial value to sum like 0. 
+
+    function calcAverage(arr) {
+        var sum = 0;
+        for (var i = 0; i < arr.length; i++) {
+            sum += arr[i];
+        }
+        return sum / arr.length;
+    }
+    calcAverage([85, 90, 92]);
+</script>
+
+</html>

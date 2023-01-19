@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<SCript>
+    const school = {
+        teachers: [{
+            id: 1,
+            name: "Pinchas",
+            subjects: ["chemistry", "biology", "physics"],
+            students: [],
+            capacityLeft: 3,
+        }, {
+            id: 2,
+            name: "Williams",
+            subjects: ["history", "ethics"],
+            students: [],
+            capacityLeft: 2,
+        }, ],
+        students: [{
+            id: 10,
+            name: "Jennifer",
+            age: 20,
+        }, {
+            id: 11,
+            name: "Howard",
+            age: 23,
+        }, {
+            id: 12,
+            name: "Old-Timmy",
+            age: 86,
+        }, {
+            id: 13,
+            name: "Houston",
+            age: 21,
+        }, ],
+    };
+    // q1
+    stu = school.students;
+
+    function findPerson(stu, id) {
+        console.log(school.students.find(el => el.id === id));
+    }
+    // findPerson(stu, 10)
+    // q2
+    function assignStudent(subject, id) {
+        let teacher = school.teachers.find(el => el.subjects.includes(subject) && el.capacityLeft > 0);
+        if (teacher) {
+            const student = school.students.find(s => s.id === id);
+            teacher.students.push(student);
+            teacher.capacityLeft--;
+        } else {
+            console.log('Sorry, no available teachers left for that subject.');
+        }
+    }
+    // console.log(assignStudent('history', 10));
+    // console.log(assignStudent('history', 11));
+    // console.log(assignStudent('history', 12));
+    function assignTeachersSubject(id, subject) {
+        const teacher1 = school.teachers.find(el => el.id = id)
+        const condition = school.teachers.find(el => el.subjects.includes(subject))
+        if (teacher1 && !condition) {
+            teacher1.subjects.push(subject);
+        }
+
+        console.log(teacher1.subjects);
+
+    }
+    assignTeachersSubject(2, 'oo')
+</script>
+
+</html>

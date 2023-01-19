@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+<script>
+    //1- why if the c the smallest to return 'a' and then to return a in the end
+    //2- another "l" is missed in the function call 
+    //3- the returns are written wrong and not all the cases that we can have 
+    function findSmallest(a, b, c) {
+        var smallest = a;
+        if (b < smallest) {
+            smallest = b;
+        }
+        if (c < smallest) {
+            smallest = c;
+        }
+        console.log(smallest);
+    }
+    findSmallest(52, 66, 2);
+</script>
+
+</html>
