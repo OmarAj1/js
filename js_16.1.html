@@ -88,8 +88,11 @@
     funcC();
 
     //block 5: 
-    // 
-
+    // when declaring a variable without giving it any statement before it 
+    // it will be by default or "accidentally declared" as global to the whole doc.
+    //  so it will print 1; 
+    // but the second one declared as var inside a func which cant be accessed from outside
+    // funcs don't give just take what others declared if its not called properly
     function funcD1() {
         d = 1;
     }
@@ -101,6 +104,18 @@
     }
     funcD2();
     console.log(e);
+
+    //block 6: 
+    // the code cant log a var before define it. it will see that I have a value named f 
+    // at first then will execute the func that wants f value it will bring it then print it.
+    // so the first one will be 1 and the second is undefined 
+
+    function funcE() {
+        console.log("Value of f in local scope: ", f);
+    }
+    console.log("Value of f in global scope: ", f);
+    var f = 1;
+    funcE();
 </script>
 
 </html>
