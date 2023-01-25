@@ -6,27 +6,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        section {
-            display: flex;
-            flex-direction: row;
-        }
-    </style>
 </head>
 
 <body>
-    <h1>how many smiles do you want to see?</h1>
+
+    <h1>How many smiles do you want to see?</h1>
     <section>
-        <input type="text">
+        <input id="input" type="text">
         <button id="on">submit</button>
     </section>
 
-    <img width="100px" height="100px" src="https://e7.pngegg.com/pngimages/933/443/png-clipart-gray-smiley-smiley-emoticon-faces-miscellaneous-face.png" alt="">
+    <div id="smiley-container"></div>
 
+    <script>
+        let on = document.getElementById('on');
+        let input = document.getElementById('input');
+        let container = document.getElementById('smiley-container');
+
+        on.addEventListener('click', displaySmilies);
+
+        numSmilies = 0;
+
+        function displaySmilies() {
+            let numSmilies = input.value;
+            while (container.firstChild) {
+                container.removeChild(container.firstChild);
+            }
+            for (let i = 0; i < numSmilies; i++) {
+                let smiley = document.createElement("img");
+                smiley.src = "https://e7.pngegg.com/pngimages/933/443/png-clipart-gray-smiley-smiley-emoticon-faces-miscellaneous-face.png";
+                smiley.alt = "smiley face";
+                smiley.style.width = "100px";
+                smiley.style.height = "100px";
+                container.appendChild(smiley);
+            }
+
+        }
+    </script>
 </body>
-<script>
-    let on = document.getElementById('on');
-    btn.addEventListener('click', textCheck);
-</script>
 
 </html>
