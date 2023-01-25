@@ -6,12 +6,57 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            background-color: lightgray;
+        }
+        
+        #father {
+            box-shadow: 0px 0px 5px grey;
+            border-radius: 20px;
+            padding: 20px;
+            background-color: whitesmoke;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            width: fit-content;
+            align-items: center;
+        }
+        
+        p {
+            display: block;
+        }
+    </style>
 </head>
 
 <body>
-
+    <div id='father'>
+        <p id='pgph'>Lorem ipsum dolor sit amet.</p>
+        <div id='secondFather'>
+            <button id="btn01">+</button>
+            <button id="btn02">-</button>
+        </div>
+    </div>
 </body>
 <script>
+    let btn01 = document.getElementById('btn01');
+    let btn02 = document.getElementById('btn02');
+    let fontSize = document.getElementById('pgph').style.fontSize;
+
+    btn01.addEventListener('click', plusFontSize);
+    btn02.addEventListener('click', minusFontSize);
+
+    function plusFontSize(e) {
+        fontSize += 5;
+        document.getElementById('pgph').style.fontSize = fontSize + 'px';
+    }
+
+    function minusFontSize(e) {
+        fontSize -= 5;
+        document.getElementById('pgph').style.fontSize = fontSize + 'px';
+    }
 </script>
 
 </html>

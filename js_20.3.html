@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+        }
+        
+        p {
+            text-align: inherit;
+        }
+        
+        textarea {
+            margin-bottom: 10px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <p>why are you interested in this position?</p>
+    <textarea name="form" id="form" cols="30" rows="10"></textarea>
+    <button id="btn">click here!</button>
+    <p id="on">
+
+    </p>
+</body>
+<script>
+    let btn = document.getElementById('btn');
+    let form = document.getElementById('form');
+    let on = document.getElementById('on');
+
+    btn.addEventListener('click', textCheck);
+
+    function textCheck(e) {
+        if (form.value.split('').length > 100) {
+            on.textContent = 'You cannot type more than 100 chars.';
+        } else {
+            on.textContent = 'submitted';
+        }
+    }
+</script>
+
+</script>
+
+</html>

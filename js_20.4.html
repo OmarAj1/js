@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: black;
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <img id="image1" src="./pics/20.4/turned-off.png" alt="">
+    <img id="image2" src="./pics/20.4/turned-on.png" alt="">
+</body>
+<script>
+    let image1 = document.getElementById('image1');
+    let image2 = document.getElementById('image2')
+
+    image1.addEventListener('click', lightbulbOn);
+    image2.addEventListener('click', lightbulbOff);
+
+    image2.style.display = 'none';
+
+    function lightbulbOn(turnedOn) {
+        image1.style.display = 'none';
+        image2.style.display = 'block';
+    }
+
+    function lightbulbOff(turnedOn) {
+        image1.style.display = 'block';
+        image2.style.display = 'none';
+    }
+</script>
+
+</html>
