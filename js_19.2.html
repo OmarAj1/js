@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    const users = [{
+        id: 167464,
+        firstName: "Jimmy",
+        lastName: "Arnold",
+        email: "jimmya@gmail.com",
+    }, {
+        id: 578447,
+        firstName: "Martha",
+        lastName: "Goldman",
+        email: "gold@hotmail.com",
+    }, {
+        id: 864578,
+        firstName: "Tim",
+        lastName: "Burton",
+        email: "timmy.hotmail.com",
+    }, ];
+
+    let userList = document.createElement("ol");
+    userList.id = "user-list";
+    document.body.appendChild(userList);
+    users.forEach(function(user) {
+        let newlist = document.createElement("li");
+        newlist.textContent = `${user.firstName} ${user.lastName}`;
+        document.querySelector("ol").appendChild(newlist);
+        newlist.id = "data-id";
+    })
+
+    userList.style.listStyle = 'none';
+</script>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./script.js" defer></script>
+</head>
+
+<body>
+    <ul>
+        <li>title 1</li>
+        <li class="start-here">title 2</li>
+        <li>
+            <ul>
+                <li>sub title 1</li>
+                <li>sub title 2</li>
+                <li>sub title 3</li>
+            </ul>
+        </li>
+        <li>title 3</li>
+    </ul>
+    <div>
+        <p>Hello World!</p>
+    </div>
+</body>
+<script>
+    let startHere = document.getElementsByClassName("start-here")[0];
+    startHere.textContent = "main title";
+
+    let newSub = document.createElement("li");
+    newSub.textContent = "sub title 4";
+    document.querySelector("ul").querySelector("ul").appendChild(newSub);
+
+    let list = document.querySelector("ul");
+    list.removeChild(list.lastElementChild);
+
+    document.title = 'Master Of The Dom';
+
+    let paragraph = document.getElementsByTagName("p")[0];
+    paragraph.textContent = "I'm Master Of The Dom";
+</script>
+
+</html>
