@@ -10,6 +10,30 @@
 
 <body>
 
+    <input placeholder="Enter some text" name="name" />
+    <p id="values"></p>
+
 </body>
+
+<script>
+    const input = document.querySelector('input');
+    const log = document.getElementById('values');
+
+    input.addEventListener('input', updateValue);
+
+    function updateValue(e) {
+        if (e.target.value > 9) {
+
+            if (e.target.value > 18) {
+                log.textContent = 'you can drink appear';
+            } else {
+                log.textContent = 'you are too young';
+
+            }
+        }
+
+
+    }
+</script>
 
 </html>
