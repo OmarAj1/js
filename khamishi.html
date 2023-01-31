@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            background-color: darkgray;
+        }
+        
+        form {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+            background-color: #333;
+            width: 200px;
+        }
+        
+        input {
+            padding: 10px;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Create an HTML form with two input fields (name and email) 
+        and a submit button. 
+        Use JavaScript to attach an event listener to the form's submit button 
+        that will prevent   
+        the form from being submitted if either of the input fields are empty. If both fields are filled out,
+        display an alert message with the name and email entered by the user. -->
+    <h1>
+        form
+    </h1>
+    <form>
+        <input id="name" type="text" placeholder="Name">
+        <input id="email" type="email" placeholder="Email">
+        <input id="submit" type="submit" value="Submit">
+    </form>
+
+
+
+</body>
+<script>
+    let name = document.getElementById("name");
+    let email = document.getElementById("email");
+    let submit = document.getElementById("submit");
+
+    submit.addEventListener('click', checkForm);
+
+    function checkForm(e) {
+        e.preventDefault(); // prevent form from being submitted
+        if (name.value !== '' && email.value !== '') {
+            alert(`Name: ${name.value} \n Email: ${email.value}`);
+        } else {
+            alert("Please fill out both name and email fields.");
+        }
+    }
+</script>
+
+</html>

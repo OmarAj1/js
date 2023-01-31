@@ -6,11 +6,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        h1 {
+            font-size: 14px;
+        }
+        
+        form {
+            display: flex;
+            flex-direction: row;
+        }
+        
+        input {
+            width: 15px;
+            padding: 10px;
+            margin: 5px;
+        }
+    </style>
 </head>
 
-<body>
+<h1>enter your pass </h1>
+<form>
+    <input class="verification-code-input" type="text">
+    <input class="verification-code-input" type="text">
+    <input class="verification-code-input" type="text">
+    <input class="verification-code-input" type="text">
+    <input class="verification-code-input" type="text">
+    <input class="verification-code-input" type="text">
+</form>
 
-</body>
-<script></script>
+<script>
+    const inputFields = document.querySelectorAll('.verification-code-input');
+    inputFields.forEach((input, i) => {
+        input.oninput = e => {
+            inputFields[i + 1] && inputFields[i + 1].focus();
+            if ([...inputFields].every(i => i.value)) document.querySelector('form').submit();
+        }
+        input.onpaste = e => {
+            e.preventDefault();
+            const pasteData = e.clipboardData.getData('text').split('');
+            pasteData.forEach((c, i) => {
+                if (inputFields[i]) inputFields[i].value = c;
+            });
+            inputFields[pasteData.length] && inputFields[pasteData.length].focus();
+        }
+    });
+</script>
 
 </html>
