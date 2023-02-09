@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 200px;
+            height: 200px;
+            border-radius: 10px;
+        }
+        
+        #cards-container {
+            background-color: #444;
+        }
+        
+        div {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px;
+            background-color: wheat;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Put your Github profile</h1>
+    <section>
+        <input id="input" type="text" placeholder="input">
+        <button id="submit">submit</button>
+    </section>
+
+    <div id="cards-container"></div>
+
+    <script>
+        const submit = document.getElementById('submit');
+        const input = document.getElementById('input');
+        const container = document.getElementById('cards-container');
+        let cards = [];
+        let cardIndex = 0;
+
+        submit.addEventListener('click', async() => {
+            const user = input.value;
+            try {
+                const inputtedUser = await fetch(`https://api.github.com/users/${user}`)
+                const imported = await inputtedUser.json();
+                const name = imported.name;
+                const repos = imported.public_repos;
+                const imgSrc = imported.avatar_url;
+                const card = createCard(name, repos, imgSrc);
+                cards[cardIndex] = card;
+                container.appendChild(card);
+                cardIndex++;
+            } catch (error) {
+                console.log(error);
+            }
+        });
+
+        function createCard(name, repos, imgSrc) {
+            const card = document.createElement('div');
+            card.classList.add('card');
+
+            const h1 = document.createElement('h1');
+            h1.innerText = name;
+
+            const h2 = document.createElement('h2');
+            h2.innerText = `num of user repos : ${repos}`;
+
+            const img = document.createElement('img');
+            img.src = imgSrc;
+            img.alt = name;
+
+            card.appendChild(h1);
+            card.appendChild(h2);
+            card.appendChild(img);
+
+            return card;
+        }
+    </script>
+</body>

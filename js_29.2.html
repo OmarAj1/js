@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>simple fetch</title>
+
+</head>
+
+<body>
+    <button id="text">joke of the day!</button>
+    <div class="data"></div>
+    <script>
+        const text = document.getElementById("text").addEventListener("click", getText);
+        const dataDisplay = document.querySelector(".data");
+        const arr = [];
+        async function getText() {
+            try {
+                const result = await fetch("https://api.jokes.one/jod");
+                const res = await result.json();
+                const joke = res.contents.jokes[0].joke;
+                dataDisplay.innerHTML = joke.text;
+            } catch (error) {
+                console.log(`There is an error: ${error}`);
+            }
+        }
+    </script>
+</body>
+
+</html>

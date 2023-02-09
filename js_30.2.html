@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {}
+        
+        section {
+            display: flex;
+            justify-content: space-evenly;
+        }
+        
+        input {
+            width: 70%;
+            height: 40px;
+        }
+        
+        #submit {
+            width: 25%;
+            height: 40px;
+        }
+        
+        #cards-container {
+            display: flex;
+            justify-content: center;
+            /* width: 60%; */
+            /* margin: 30%; */
+            background-color: #333;
+        }
+    </style>
+    <section></section>
+</head>
+
+<body>
+
+    <h1>put the movie name in the field</h1>
+    <section>
+        <input id="input" type="text" placeholder="Movie Name">
+        <button id="submit">submit</button>
+    </section>
+    <div id="cards-container">
+        <img id="poster" src="" alt="">
+        <div>
+            <h2 id="title"></h2>
+            <h2 id="Genre"></h2>
+            <h2 id="year"></h2>
+            <p id="plot"></p>
+            <h2 id="director"></h2>
+            <h2 id="actors"></h2>
+        </div>
+    </div>
+</body>
+
+<script>
+    const input = document.getElementById('input');
+    const submit = document.getElementById('submit');
+
+    const title = document.getElementById('title');
+    const poster = document.getElementById('poster');
+    const Genre = document.getElementById('Genre');
+    const year = document.getElementById('year');
+    const plot = document.getElementById('plot');
+    const actors = document.getElementById('actors');
+    const director = document.getElementById('director');
+
+    submit.addEventListener('click', async() => {
+        const movieName = input.value;
+        try {
+            const newFetch = await fetch(`http://www.omdbapi.com/?t=${movieName}&apikey=4400c6c4`);
+            const url = await newFetch.json();
+
+            title.innerText = 'movie Title' + url.Title;
+            year.innerText = url.Year;
+            plot.innerText = url.Plot;
+            actors.innerText = url.Actors;
+            director.innerText = url.Director;
+            Genre.innerText = url.Genre;
+
+            poster.src = url.Poster;
+        } catch (error) {
+            console.log(error);
+        }
+    })
+</script>
+
+</html>
